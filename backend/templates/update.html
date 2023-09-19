@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar Dato</title>
+</head>
+<body>
+    <h1>Actualizar Dato</h1>
+    <form action="/data/{{ item['id'] }}/update" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ item['nombre'] }}" required>
+        <input type="submit" value="Actualizar">
+    </form>
+    <a href="/">Volver a la Lista</a>
+</body>
+</html>

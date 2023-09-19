@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Datos</title>
+</head>
+<body>
+    <h1>Lista de Datos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item['id'] }}</td>
+                <td>{{ item['nombre'] }}</td>
+                <td>
+                    <a href="/data/{{ item['id'] }}/update">Actualizar</a>
+                    <form action="/data/{{ item['id'] }}/delete" method="POST">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/data/create">Crear Nuevo</a>
+</body>
+</html>
